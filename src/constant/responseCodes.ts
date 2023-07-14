@@ -19,5 +19,7 @@ export const errorCodes: errorTypes = {
   notAllowed: 'notAllowed',
   conflict: 'conflict',
   internalServerError: 'internalServerError',
+  studentNotExist: 'studentNotExist',
+  coursesNotFound: 'coursesNotFound',
   error: 'error',
 };

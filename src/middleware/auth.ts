@@ -17,6 +17,7 @@ export const authenticate: MiddlewareFn<MyContext> = async (
     const payload = jwt.verify(authToken, dbConfig.tokenKey);
     context.payload = payload as any;
   } catch (err: any) {
+    console.log(err.message);
     throw new GraphQLError(err.message, {
       extensions: {
         code: 'NOT Authenticated ❌ ',
