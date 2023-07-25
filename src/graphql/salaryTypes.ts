@@ -16,7 +16,6 @@ export class Salary {
   user: Users;
 }
 
-//*so
 @InputType()
 export class SalaryInput {
   @Field(() => ID, { nullable: true })
@@ -46,7 +45,7 @@ export class SalarySpecificReturn {
   @Field(() => String)
   user: Users;
 }
-//*so basically the mainmai
+
 @InputType()
 export class specifiSalary {
   @Field(() => ID)

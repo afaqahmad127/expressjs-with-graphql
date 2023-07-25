@@ -5,6 +5,7 @@ import {
   ManyToOne,
   OneToMany,
   Unique,
+  Index,
 } from 'typeorm';
 import { Designation } from './designation';
 import { SalaryEntity } from './salary';
@@ -15,6 +16,7 @@ export class User {
   @PrimaryGeneratedColumn()
   id: number;
 
+  @Index('name1-idx')
   @Column()
   name: string;
 

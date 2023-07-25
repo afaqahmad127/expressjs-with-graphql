@@ -6,10 +6,17 @@ import { DesignResolvers } from '../resolvers/desigResolver';
 import { salaryResolvers } from '../resolvers/salaryResolver';
 import { UsersResolvers } from '../resolvers/UserResolvers';
 import { dbConfig } from '../config/Config';
-
+import { StudentResolver } from '../resolvers/studentsResolver';
+import { courseResolver } from '../resolvers/courseResolver';
 export async function server() {
   const schema = await buildSchema({
-    resolvers: [UsersResolvers, DesignResolvers, salaryResolvers],
+    resolvers: [
+      UsersResolvers,
+      DesignResolvers,
+      salaryResolvers,
+      StudentResolver,
+      courseResolver,
+    ],
   });
   const server = new ApolloServer({
     schema,

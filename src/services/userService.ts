@@ -13,6 +13,7 @@ import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import { dbConfig } from '../config/Config';
 import { errorCodes } from '../constant/responseCodes';
+
 export class UserService {
   userRepository: Repository<User>;
   designationRepository: Repository<Designation>;
@@ -148,7 +149,7 @@ export class UserService {
 
       let jwtString = '';
       jwtString = jwt.sign({ id: user.id }, dbConfig.tokenKey, {
-        expiresIn: '1h',
+        expiresIn: '4h',
       });
       const authToken: tokenType = {
         token: jwtString,
